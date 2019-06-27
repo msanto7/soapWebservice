@@ -22,11 +22,23 @@ namespace mikesWebService.asmx
     public class WebDev1Service : System.Web.Services.WebService
     {
 
+        // simple service call to return a string (esentially a 'hello world' example)
         [WebMethod]
         public string BikesStudioService()  
         {
             return "From BikesOnRails to BikesStudio. SOAP Example.";
 
+        }
+
+        [WebMethod]
+        public int DesiredAmountOfBikes(List<int> numBikes)
+        {
+            int sum = 0;
+            foreach (int bike in numBikes)
+            {
+                sum = sum + numBikes[bike];
+            }
+            return sum;
         }
 
 
