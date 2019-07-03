@@ -31,14 +31,24 @@ namespace mikesWebService.asmx
         }
 
         [WebMethod]
-        public int DesiredAmountOfBikes(List<int> numBikes)
+        public String DesiredAmountOfBikes(int height)
         {
-            int sum = 0;
-            foreach (int bike in numBikes)
+            if (height <= 63)
             {
-                sum = sum + numBikes[bike];
+                return "Small";
             }
-            return sum;
+            else if (height > 63 && height <= 67)
+            {
+                return "Medium";
+            }
+            else if (height > 67 && height <= 71)
+            {
+                return "Large";
+            }
+            else
+            {
+                return "Extra Large";
+            }
         }
 
 

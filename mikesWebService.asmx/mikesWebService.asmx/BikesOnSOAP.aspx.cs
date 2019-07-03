@@ -14,12 +14,13 @@ namespace mikesWebService.asmx
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Submit_Click(object sender, EventArgs e)
         {
             WebDev1Service webService = new WebDev1Service();
-            List<int> lstIntegers = new List<int> { 5, 6, 7 };
+            // List<int> lstIntegers = new List<int> { 5, 6, 7 };
+            int height = Int32.Parse(heightInput.Text);
 
-            Label1.Text = "Output of WebService: " + webService.DesiredAmountOfBikes(lstIntegers).ToString();
+            webServiceOutput.Text = "Recommended Bike Size: " + webService.DesiredAmountOfBikes(height).ToString();
 
         }
 
